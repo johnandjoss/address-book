@@ -15,6 +15,10 @@ class Phone
     @@phone_info
   end
 
+  define_singleton_method(:clear) do
+    @@phone_info = []
+  end
+
   define_method(:save) do
     @@phone_info.push(self)
   end

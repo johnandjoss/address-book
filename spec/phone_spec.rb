@@ -2,6 +2,9 @@ require('rspec')
 require('phone')
 
 describe(Phone) do
+  before() do
+    Phone.clear()
+  end
 
   describe('#initialize', '#attr_reader') do
     it("returns the details of a phone number") do
