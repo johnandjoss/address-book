@@ -44,13 +44,13 @@ describe(Phone) do
     end
   end
 
-  # describe('.find') do
-  #   it("returns a phone contact by its id number") do
-  #     test_number = Phone.new("503", "7587819", "cell")
-  #     test_number.save()
-  #     test_number2 = Phone.new("555", "1234567", "home")
-  #     test_number2.save()
-  #     expect(Phone.find(test_number.id())).to(eq(test_number))
-  #   end
-  # end
+  describe('.find') do
+    it("returns a phone contact by its id number") do
+      test_number = Phone.new("503", "7587819", "cell")
+      test_number.save()
+      test_number2 = Phone.new("555", "1234567", "home")
+      test_number2.save()
+      expect(Phone.find(test_number.id())).to(eq(test_number))
+    end
+  end
 end

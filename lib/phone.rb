@@ -26,4 +26,14 @@ class Phone
   define_method(:id) do
     @id
   end
+
+  define_singleton_method(:find) do |id|
+    found_number = nil
+    @@phone_info.each() do |phone_number|
+      if phone_number.id().eql?(id.to_i())
+        found_number = phone_number
+      end
+    end
+    found_number
+  end
 end
