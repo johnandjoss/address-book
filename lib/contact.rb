@@ -24,5 +24,7 @@ class Contact
     @@contacts.push(self)
   end
 
-
+  define_method(:id) do
+    @id
+  end
 end
