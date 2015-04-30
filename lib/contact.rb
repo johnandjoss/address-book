@@ -1,5 +1,6 @@
 class Contact
-@@contacts = []
+  
+  @@contacts = []
 
   attr_reader(:first_name, :last_name, :birth_month, :addresses, :phone_nums)
 
