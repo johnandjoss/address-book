@@ -33,4 +33,11 @@ describe(Contact) do
       expect(Contact.all()).to(eq([test_contact]))
     end
   end
+
+  describe('#id') do
+    it("returns the id of the contact") do
+      test_contact = Contact.new("Bob", "Ross", "12")
+      expect(test_contact.id()).to(eq(1))
+    end
+  end
 end
