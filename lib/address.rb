@@ -12,5 +12,8 @@ class Address
     @id = @@address_info.length + 1
   end
 
+  define_singleton_method(:all) do
+    @@address_info
+  end
 
 end

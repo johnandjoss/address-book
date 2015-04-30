@@ -1,7 +1,10 @@
 require('rspec')
 require('address')
 
-
+describe(Address) do
+  #before() do
+  #  Address.clear()
+  #end
 
 describe('#initialize', '#attr_reader') do
   it("returns the details of a address ") do
@@ -11,4 +14,10 @@ describe('#initialize', '#attr_reader') do
     expect(test_address.zip).to(eq("99383"))
     expect(test_address.type).to(eq("home"))
   end
+end
+describe('.all') do
+  it("is empty at first") do
+    expect(Address.all()).to(eq([]))
+  end
+end
 end
