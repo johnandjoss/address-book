@@ -11,10 +11,18 @@ describe(Phone) do
       expect(test_number.type).to(eq("cell"))
     end
   end
-  
+
   describe('.all') do
     it("is empty at first") do
       expect(Phone.all()).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it("adds a phone contact to the phone info array") do
+      test_number = Phone.new("503", "7587819", "cell")
+      test_number.save()
+      expect(Phone.all()).to(eq([test_number]))
     end
   end
 end
