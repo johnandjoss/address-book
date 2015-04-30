@@ -7,6 +7,8 @@ describe(Contact) do
     it("returns the first name of a contact") do
       test_contact = Contact.new("Bob", "Ross", 12)
       expect(test_contact.first_name).to(eq("Bob"))
+      expect(test_contact.last_name).to(eq("Ross"))
+      expect(test_contact.birth_month).to(eq(12))
     end
   end
 end
