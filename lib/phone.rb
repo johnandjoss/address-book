@@ -18,4 +18,8 @@ class Phone
   define_method(:save) do
     @@phone_info.push(self)
   end
+
+  define_method(:id) do
+    @id
+  end
 end

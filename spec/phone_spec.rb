@@ -18,6 +18,14 @@ describe(Phone) do
     end
   end
 
+  describe('.clear') do
+    it("clears phone contacts from memory") do
+      Phone.new("555", "1234567", "home").save()
+      Phone.clear()
+      expect(Phone.all()).to(eq([]))
+    end
+  end
+
   describe('#save') do
     it("adds a phone contact to the phone info array") do
       test_number = Phone.new("503", "7587819", "cell")
@@ -26,13 +34,20 @@ describe(Phone) do
     end
   end
 
-  describe('.find') do
-    it("returns a phone contact by its id number") do
-      test_number = Phone.new("503", "7587819", "cell")
-      test_number.save()
-      test_number2 = Phone.new("555", "1234567", "home")
-      test_number2.save()
-      expect(Phone.find(test_number.id())).to(eq(test_number))
+  describe('#id') do
+    it("returns the id of the phone contact") do
+      test_number = Phone.new("555", "1234567", "home")
+      expect(test_number.id()).to(eq(1))
     end
   end
+
+  # describe('.find') do
+  #   it("returns a phone contact by its id number") do
+  #     test_number = Phone.new("503", "7587819", "cell")
+  #     test_number.save()
+  #     test_number2 = Phone.new("555", "1234567", "home")
+  #     test_number2.save()
+  #     expect(Phone.find(test_number.id())).to(eq(test_number))
+  #   end
+  # end
 end
