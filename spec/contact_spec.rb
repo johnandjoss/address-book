@@ -11,4 +11,10 @@ describe(Contact) do
       expect(test_contact.birth_month).to(eq(12))
     end
   end
+
+  describe('.all') do
+    it("is empty at first") do
+      expect(Contact.all()).to(eq([]))
+    end
+  end
 end
