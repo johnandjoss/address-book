@@ -10,4 +10,8 @@ class Phone
     @type = type
     @id = @@phone_info.length + 1
   end
+
+  define_singleton_method(:all) do
+    @@phone_info
+  end
 end
