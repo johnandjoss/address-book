@@ -44,6 +44,14 @@ describe(Contact) do
     end
   end
 
+  describe('#address', '#phone_nums') do
+    it('initially returns empty arrays of addresses and phone numbers for the contacts') do
+      test_contact = Contact.new("Bob", "Ross", "12")
+      expect(test_contact.addresses()).to(eq([]))
+      expect(test_contact.phone_nums()).to(eq([]))      
+    end
+  end
+
   describe('.find') do
     it("returns a contact by its id number") do
       test_contact = Contact.new("Bob", "Ross", "12")
