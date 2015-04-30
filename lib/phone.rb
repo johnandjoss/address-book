@@ -14,4 +14,8 @@ class Phone
   define_singleton_method(:all) do
     @@phone_info
   end
+
+  define_method(:save) do
+    @@phone_info.push(self)
+  end
 end
