@@ -24,5 +24,17 @@ class Address
     @@address_info.push(self)
   end
 
+  define_method(:id) do
+    @id
+  end
 
+  define_singleton_method(:find) do |id|
+    found_address = nil
+    @@address_info.each() do |address|
+      if address.id().eql?(id.to_i())
+        found_address = address
+      end
+    end
+    found_address
+  end
 end

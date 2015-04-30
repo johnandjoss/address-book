@@ -37,4 +37,21 @@ describe('.clear') do
     expect(Address.all()).to(eq([]))
   end
 end
+
+describe('#id') do
+  it("returns the id of the address contact") do
+    test_address = Address.new("portland", "oregon", "99383", "home")
+    expect(test_address.id()).to(eq(1))
+  end
+end
+
+describe('.find') do
+  it("returns an address contact by its id number") do
+    test_address = Address.new("portland", "oregon", "99383", "home")
+    test_address.save()
+    test_address2 = Address.new("portland", "oregon", "99383", "home")
+    test_address2.save()
+    expect(Address.find(test_address.id())).to(eq(test_address))
+  end
+end
 end
