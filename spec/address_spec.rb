@@ -2,9 +2,9 @@ require('rspec')
 require('address')
 
 describe(Address) do
-  #before() do
-  #  Address.clear()
-  #end
+  before() do
+    Address.clear()
+  end
 
 describe('#initialize', '#attr_reader') do
   it("returns the details of a address ") do
@@ -17,6 +17,23 @@ describe('#initialize', '#attr_reader') do
 end
 describe('.all') do
   it("is empty at first") do
+    expect(Address.all()).to(eq([]))
+  end
+end
+
+describe('#save') do
+  it("adds address info to the address class array") do
+    test_address = Address.new("portland", "oregon", "99383", "home")
+    test_address.save()
+    expect(Address.all()).to(eq([test_address]))
+  end
+end
+
+
+describe('.clear') do
+  it("clears address info from memory") do
+    Address.new("portland", "oregon", "99383", "home").save()
+    Address.clear()
     expect(Address.all()).to(eq([]))
   end
 end

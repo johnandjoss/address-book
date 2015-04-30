@@ -16,4 +16,13 @@ class Address
     @@address_info
   end
 
+  define_singleton_method(:clear) do
+    @@address_info = []
+  end
+
+  define_method(:save) do
+    @@address_info.push(self)
+  end
+
+
 end
