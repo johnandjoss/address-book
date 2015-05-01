@@ -1,5 +1,6 @@
 require('rspec')
 require('contact')
+require('pry')
 
 describe(Contact) do
   before() do
@@ -8,7 +9,7 @@ describe(Contact) do
 
   describe('#first_name') do
     it("returns the first name of a contact") do
-      test_contact = Contact.new("Bob", "Ross", "12")
+      test_contact = Contact.new("Ross", "Bob", "12")
       expect(test_contact.first_name).to(eq("Bob"))
       expect(test_contact.last_name).to(eq("Ross"))
       expect(test_contact.birth_month).to(eq("12"))
@@ -48,7 +49,7 @@ describe(Contact) do
     it('initially returns empty arrays of addresses and phone numbers for the contacts') do
       test_contact = Contact.new("Bob", "Ross", "12")
       expect(test_contact.addresses()).to(eq([]))
-      expect(test_contact.phone_nums()).to(eq([]))      
+      expect(test_contact.phone_nums()).to(eq([]))
     end
   end
 
