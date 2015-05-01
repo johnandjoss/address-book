@@ -1,6 +1,7 @@
 require('rspec')
 require('contact')
-require('pry')
+require('address')
+require('phone')
 
 describe(Contact) do
   before() do
@@ -62,4 +63,22 @@ describe(Contact) do
       expect(Contact.find(test_contact.id())).to(eq(test_contact))
     end
   end
+
+  describe('#add_address') do
+   it('adds a new address to addresses array') do
+     test_contact = Contact.new("Bob", "Ross", "12")
+     test_address = Address.new("port","ohio", "yout", "home")
+     test_contact.add_address(test_address)
+     expect(test_contact.addresses()).to(eq([test_address]))
+   end
+ end
+
+ describe('#add_phone') do
+  it('adds a new phone num to phone-nums array') do
+    test_contact = Contact.new("Bob", "Ross", "12")
+    test_phone = Phone.new("345", "533233", "cell")
+    test_contact.add_phone(test_phone)
+    expect(test_contact.phone_nums()).to(eq([test_phone]))
+  end
+end
 end

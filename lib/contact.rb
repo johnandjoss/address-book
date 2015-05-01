@@ -1,5 +1,4 @@
 class Contact
-  require('pry')
 
   @@contacts = []
 
@@ -39,4 +38,13 @@ class Contact
     end
     found_contact
   end
+
+  define_method(:add_address) do |new_address|
+    @addresses.push(new_address)
+  end
+
+  define_method(:add_phone) do |new_phone|
+    @phone_nums.push(new_phone)
+  end
+
 end
