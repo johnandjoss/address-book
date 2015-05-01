@@ -1,16 +1,19 @@
-<h1>Add a phone number to <%= @contact.first_name() %> </h1>
+<h1>Add a phone number to <%= @contact.first_name() %> <%= @contact.last_name() %> </h1>
 
 <form action="/phones" method="post">
   <input id='contact_id' name='contact_id' type='hidden' value='<%= @contact.id() %>'>
 
   <label for='area_code'>area code:</label>
   <input id='area_code' name='area_code' type='text'>
-
+  <br>
+  <br>
   <label for='number'>number:</label>
   <input id='number' name='number' type='text'>
-
+  <br>
+  <br>
   <label for='type'>type:</label>
   <input id='type' name='type' type='text'>
-
+  <br>
+  <br>
   <button type="submit">Add Phone</button>
 </form>

@@ -1,6 +1,7 @@
 <h1>Contacts</h1>
 <ul>
   <% @contacts.each() do |person| %>
-  <li><a href="/contacts/<%= person.id() %>"><%= person.last_name() %></a></li>
+  <li><a href="/contacts/<%= person.id() %>"> Last-name: <%= person.last_name() %>, First-name: <%= person.first_name() %>, Birthday-month: <%= person.birth_month() %>
+  </a></li>
   <% end %>
 </ul>
